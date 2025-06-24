@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="microblog-feed">
+  <h1>近期动态</h1>
+  {{ range .Pages.GroupByDate "2006-01-02" }}
+    <div class="day-group">
+      <h2>{{ .Key }}</h2>
+      {{ range .Pages }}
+        {{ .Render "microblog" }}
+      {{ end }}
+    </div>
+  {{ end }}
+</section>
+{{ end }}

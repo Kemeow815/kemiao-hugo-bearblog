@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>动态归档</h1>
+<ul>
+  {{ range .Pages.GroupByDate "2006年1月" }}
+    <li>
+      <h2>{{ .Key }}</h2>
+      <ul>
+        {{ range .Pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Date.Format "01-02" }}: {{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

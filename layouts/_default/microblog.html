@@ -1,0 +1,12 @@
+<article class="microblog">
+    <div class="metadata">
+      <time datetime="{{ .Date }}">{{ .Date.Format "15:04" }}</time>
+      {{ with .Params.emoji }}<span class="emoji">{{ . }}</span>{{ end }}
+    </div>
+    <div class="content">
+      {{ .Content }}
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="动态图片" class="microblog-image">
+      {{ end }}
+    </div>
+  </article>
