@@ -11,6 +11,7 @@
 {{ end }}{{ end }}
 <content>
   {{ .Content }}
+  {{ partial "comments.html" . }} <!-- 插入评论 -->
 </content>
 <p>
   {{ range (.GetTerms "tags") }}
